@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Få tilbud — idle</title>
-<meta name="description" content="Fortell oss om garasjen din, så designer vi en skreddersydd ståloppbevaringsløsning. Uforpliktende befaring og tilbud.">
+<title>Kontakt oss — idle</title>
+<meta name="description" content="Ta kontakt med idle — vi tar kontakt så snart vi har mer å vise.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,9 +22,7 @@
     <a class="nav__logo logotype" href="index.html">idle</a>
 
     <nav class="nav__links" aria-label="Hovednavigasjon">
-      <a class="nav__link" href="losninger.html">Løsninger</a>
-      <a class="nav__link" href="om-oss.html">Om oss</a>
-      <a class="nav__cta btn-cta" href="kontakt.html">Få tilbud</a>
+      <a class="nav__cta btn-cta" href="kontakt.html">Kontakt oss</a>
     </nav>
 
     <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Åpne meny">
@@ -33,9 +31,7 @@
   </div>
 
   <nav class="nav__mobile" id="nav-mobile" aria-label="Mobilnavigasjon">
-    <a class="nav__mobile-link" href="losninger.html">Løsninger</a>
-    <a class="nav__mobile-link" href="om-oss.html">Om oss</a>
-    <a class="nav__mobile-link nav__mobile-link--cta" href="kontakt.html">Få tilbud</a>
+    <a class="nav__mobile-link nav__mobile-link--cta" href="kontakt.html">Kontakt oss</a>
   </nav>
 </header>
 
@@ -44,38 +40,14 @@
     <div class="contact__grid">
 
       <div>
-        <p class="contact__eyebrow tagline">Få tilbud</p>
-        <h1 class="contact__heading">Sett plassen<br>din i arbeid</h1>
-        <p class="contact__lead">Fortell oss om garasjen din, så designer vi en skreddersydd ståloppbevaringsløsning.</p>
-
-        <div class="steps-mini">
-          <div class="steps-mini__item">
-            <span class="steps-mini__num">01</span>
-            <div>
-              <p class="steps-mini__label">Befaring</p>
-              <p class="steps-mini__desc">Vi besøker og måler rommet ditt — uforpliktende.</p>
-            </div>
-          </div>
-          <div class="steps-mini__item">
-            <span class="steps-mini__num">02</span>
-            <div>
-              <p class="steps-mini__label">Skreddersydd design</p>
-              <p class="steps-mini__desc">Ingeniørtegninger tilpasset din garasje.</p>
-            </div>
-          </div>
-          <div class="steps-mini__item">
-            <span class="steps-mini__num">03</span>
-            <div>
-              <p class="steps-mini__label">Montering</p>
-              <p class="steps-mini__desc">Profesjonell montering med full dokumentasjon.</p>
-            </div>
-          </div>
-        </div>
+        <p class="contact__eyebrow tagline">Kontakt oss</p>
+        <h1 class="contact__heading">Bli kjent med<br>idle</h1>
+        <p class="contact__lead">Vi jobber med løsningen. Legg igjen kontaktinfo, så tar vi kontakt så snart vi har mer å vise.</p>
       </div>
 
       <div>
         <form class="contact__form" id="contact-form" novalidate>
-          <input type="hidden" name="_subject" value="Tilbudsforespørsel fra idle.no">
+          <input type="hidden" name="_subject" value="Ny henvendelse fra idle.no">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" value="">
@@ -101,22 +73,11 @@
           </div>
 
           <div class="form-field">
-            <label class="form-label" for="f-module">Ønsket modul</label>
-            <select class="form-select" id="f-module" name="module">
-              <option>Kompakt (60 × 90 × 60 cm)</option>
-              <option>Høymodul (60 × 120 × 60 cm)</option>
-              <option>Verktøymodul (120 × 90 × 90 cm)</option>
-              <option>Dekkmodul Premium (120 × 120 × 90 cm)</option>
-              <option>Usikker / ønsker rådgivning</option>
-            </select>
+            <label class="form-label" for="f-message">Melding</label>
+            <textarea class="form-textarea" id="f-message" name="message" placeholder="Fortell oss gjerne litt om hva du er interessert i …"></textarea>
           </div>
 
-          <div class="form-field">
-            <label class="form-label" for="f-message">Fortell oss om rommet ditt</label>
-            <textarea class="form-textarea" id="f-message" name="message" placeholder="Antall plasser, takhøyde, spesielle krav …"></textarea>
-          </div>
-
-          <button class="btn-cta form-submit" type="submit">Send forespørsel →</button>
+          <button class="btn-cta form-submit" type="submit">Send →</button>
 
           <p class="form-note">Eller kontakt oss direkte på <a href="mailto:hei@idle.no">hei@idle.no</a></p>
         </form>
@@ -124,7 +85,7 @@
         <div class="form-success" id="form-success">
           <p class="form-success__eyebrow tagline">Melding mottatt</p>
           <h2 class="form-success__heading">No space left idle</h2>
-          <p class="form-success__lead">Vi har mottatt forespørselen din og tar kontakt innen én virkedag for å avtale befaring.</p>
+          <p class="form-success__lead">Vi har mottatt henvendelsen din og tar kontakt så snart vi har mer å vise.</p>
           <a class="btn-cta" href="index.html">Tilbake til forsiden</a>
         </div>
       </div>
@@ -143,17 +104,7 @@
 
     <div class="footer__col">
       <p class="footer__head label">Navigasjon</p>
-      <a class="footer__link" href="losninger.html">Løsninger</a>
-      <a class="footer__link" href="om-oss.html">Om oss</a>
-      <a class="footer__link" href="kontakt.html">Få tilbud</a>
-    </div>
-
-    <div class="footer__col">
-      <p class="footer__head label">Marked</p>
-      <p class="footer__static">Norge</p>
-      <p class="footer__static">Sverige</p>
-      <p class="footer__static">Danmark</p>
-      <p class="footer__static">Finland</p>
+      <a class="footer__link" href="kontakt.html">Kontakt oss</a>
     </div>
 
     <div class="footer__col">
