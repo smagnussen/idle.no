@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Få tilbud — idle</title>
+<meta name="description" content="Fortell oss om garasjen din, så designer vi en skreddersydd ståloppbevaringsløsning. Uforpliktende befaring og tilbud.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#innhold">Hopp til innhold</a>
+
+<header class="nav" id="site-nav">
+  <div class="nav__inner">
+    <a class="nav__logo logotype" href="index.html">idle</a>
+
+    <nav class="nav__links" aria-label="Hovednavigasjon">
+      <a class="nav__link" href="losninger.html">Løsninger</a>
+      <a class="nav__link" href="om-oss.html">Om oss</a>
+      <a class="nav__cta btn-cta" href="kontakt.html">Få tilbud</a>
+    </nav>
+
+    <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Åpne meny">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="nav__mobile" id="nav-mobile" aria-label="Mobilnavigasjon">
+    <a class="nav__mobile-link" href="losninger.html">Løsninger</a>
+    <a class="nav__mobile-link" href="om-oss.html">Om oss</a>
+    <a class="nav__mobile-link nav__mobile-link--cta" href="kontakt.html">Få tilbud</a>
+  </nav>
+</header>
+
+<main id="innhold">
+  <section class="contact">
+    <div class="contact__grid">
+
+      <div>
+        <p class="contact__eyebrow tagline">Få tilbud</p>
+        <h1 class="contact__heading">Sett plassen<br>din i arbeid</h1>
+        <p class="contact__lead">Fortell oss om garasjen din, så designer vi en skreddersydd ståloppbevaringsløsning.</p>
+
+        <div class="steps-mini">
+          <div class="steps-mini__item">
+            <span class="steps-mini__num">01</span>
+            <div>
+              <p class="steps-mini__label">Befaring</p>
+              <p class="steps-mini__desc">Vi besøker og måler rommet ditt — uforpliktende.</p>
+            </div>
+          </div>
+          <div class="steps-mini__item">
+            <span class="steps-mini__num">02</span>
+            <div>
+              <p class="steps-mini__label">Skreddersydd design</p>
+              <p class="steps-mini__desc">Ingeniørtegninger tilpasset din garasje.</p>
+            </div>
+          </div>
+          <div class="steps-mini__item">
+            <span class="steps-mini__num">03</span>
+            <div>
+              <p class="steps-mini__label">Montering</p>
+              <p class="steps-mini__desc">Profesjonell montering med full dokumentasjon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form class="contact__form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="f-name">Navn</label>
+              <input class="form-input" type="text" id="f-name" name="name" placeholder="Ditt navn" required>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="f-email">E-post</label>
+              <input class="form-input" type="email" id="f-email" name="email" placeholder="din@epost.no" required>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="f-phone">Telefon</label>
+            <input class="form-input" type="tel" id="f-phone" name="phone" placeholder="+47 XXX XX XXX">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="f-address">Garasjeadresse</label>
+            <input class="form-input" type="text" id="f-address" name="address" placeholder="Gate, sted">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="f-module">Ønsket modul</label>
+            <select class="form-select" id="f-module" name="module">
+              <option>Kompakt (60 × 90 × 60 cm)</option>
+              <option>Høymodul (60 × 120 × 60 cm)</option>
+              <option>Verktøymodul (120 × 90 × 90 cm)</option>
+              <option>Dekkmodul Premium (120 × 120 × 90 cm)</option>
+              <option>Usikker / ønsker rådgivning</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="f-message">Fortell oss om rommet ditt</label>
+            <textarea class="form-textarea" id="f-message" name="message" placeholder="Antall plasser, takhøyde, spesielle krav …"></textarea>
+          </div>
+
+          <button class="btn-cta form-submit" type="submit">Send forespørsel →</button>
+
+          <p class="form-note">Eller kontakt oss direkte på <a href="mailto:hei@idle.no">hei@idle.no</a></p>
+        </form>
+
+        <div class="form-success" id="form-success">
+          <p class="form-success__eyebrow tagline">Melding mottatt</p>
+          <h2 class="form-success__heading">No space left idle</h2>
+          <p class="form-success__lead">Din e-postklient åpnes med forespørselen din ferdig utfylt. Send den av gårde, så tar vi kontakt innen én virkedag for å avtale befaring.</p>
+          <a class="btn-cta" href="index.html">Tilbake til forsiden</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <a class="footer__logo logotype" href="index.html">idle</a>
+      <p class="footer__tagline tagline">No space left idle</p>
+      <p class="footer__desc">Skreddersydde stålmoduler for garasjer. Smart utnyttelse av plassen over bilen din.</p>
+    </div>
+
+    <div class="footer__col">
+      <p class="footer__head label">Navigasjon</p>
+      <a class="footer__link" href="losninger.html">Løsninger</a>
+      <a class="footer__link" href="om-oss.html">Om oss</a>
+      <a class="footer__link" href="kontakt.html">Få tilbud</a>
+    </div>
+
+    <div class="footer__col">
+      <p class="footer__head label">Marked</p>
+      <p class="footer__static">Norge</p>
+      <p class="footer__static">Sverige</p>
+      <p class="footer__static">Danmark</p>
+      <p class="footer__static">Finland</p>
+    </div>
+
+    <div class="footer__col">
+      <p class="footer__head label">Kontakt</p>
+      <p class="footer__desc footer__desc--narrow">
+        <a class="footer__email" href="mailto:hei@idle.no">hei@idle.no</a><br>
+        idle.no<br>
+        Idle AS<br>Bærum, Norge
+      </p>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p class="footer__legal">© 2026 Idle AS. Alle rettigheter forbeholdt.</p>
+    <div class="footer__legal-links">
+      <span class="footer__legal">Personvern</span>
+      <span class="footer__legal">Vilkår</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+</body>
+</html>

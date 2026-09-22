@@ -1,0 +1,302 @@
+/* ============================================================
+   IDLE AS — Design System CSS Variables
+   colors_and_type.css
+   Based on Idle Brandguide v1, April 2026
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Satoshi via Fontshare CDN */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap');
+
+/* ============================================================
+   BASE COLOR TOKENS
+   ============================================================ */
+:root {
+  /* --- Brand Palette --- */
+  --color-kull:    #1A1A1A;   /* Charcoal — primary, steel, power */
+  --color-betong:  #4A5568;   /* Concrete — secondary, industrial */
+  --color-messing: #C8A96B;   /* Brass — accent, premium, CTA */
+  --color-lys:     #F5F3EF;   /* Light — background, air, space */
+
+  /* --- Tints & Shades --- */
+  --color-kull-90:     #2e2e2e;
+  --color-kull-80:     #333333;
+  --color-betong-80:   #5e6e85;
+  --color-betong-40:   #9aaabf;
+  --color-messing-80:  #d4b97e;
+  --color-messing-60:  #deca98;
+  --color-messing-20:  #f5eddc;
+  --color-lys-80:      #f9f7f3;
+  --color-lys-60:      #ede9e0;
+  --color-white:       #ffffff;
+
+  /* ============================================================
+     SEMANTIC COLOR TOKENS
+     ============================================================ */
+
+  /* Backgrounds */
+  --bg-primary:        var(--color-kull);      /* Dark hero sections, premium */
+  --bg-secondary:      var(--color-lys);       /* Light editorial, body */
+  --bg-subtle:         var(--color-lys-60);    /* Subtle section dividers */
+  --bg-inverse:        var(--color-lys);       /* Inverse of primary */
+
+  /* Foreground / Text */
+  --fg-primary:        var(--color-kull);      /* Body text on light bg */
+  --fg-secondary:      var(--color-betong);    /* Secondary text, captions */
+  --fg-accent:         var(--color-messing);   /* Accent text, tagline */
+  --fg-inverse:        var(--color-lys);       /* Text on dark bg */
+  --fg-inverse-secondary: #9aaabf;             /* Secondary text on dark bg */
+
+  /* Borders */
+  --border-default:    var(--color-betong-40); /* Default borders */
+  --border-subtle:     var(--color-lys-60);    /* Subtle dividers */
+  --border-accent:     var(--color-messing);   /* Accent / CTA borders */
+  --border-dashed:     var(--color-betong-40); /* Dashed "idle" motif lines */
+
+  /* Interactive / CTA */
+  --cta-bg:            var(--color-messing);
+  --cta-bg-hover:      #b8954d;
+  --cta-text:          var(--color-kull);
+  --cta-text-inverse:  var(--color-lys);
+
+  /* States */
+  --state-hover-opacity:  0.8;
+  --state-press-scale:    0.98;
+  --state-focus-ring:     2px solid var(--color-messing);
+
+  /* ============================================================
+     TYPOGRAPHY TOKENS
+     ============================================================ */
+
+  /* Font Families */
+  --font-display:  'Satoshi', 'Inter', sans-serif;
+  --font-body:     'Inter', 'DM Sans', sans-serif;
+  --font-mono:     'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Font Weights */
+  --fw-light:     300;
+  --fw-regular:   400;
+  --fw-medium:    500;
+  --fw-bold:      700;
+
+  /* Font Sizes — Base scale (16px root) */
+  --fs-h1:        clamp(2rem, 4vw, 3.5rem);   /* Display, hero */
+  --fs-h2:        clamp(1.5rem, 3vw, 2rem);    /* Section titles */
+  --fs-h3:        clamp(1.125rem, 2vw, 1.5rem);/* Subtitles */
+  --fs-body:      1rem;                         /* 16px body */
+  --fs-small:     0.875rem;                     /* 14px */
+  --fs-caption:   0.75rem;                      /* 12px */
+  --fs-label:     0.6875rem;                    /* 11px — labels, tags */
+
+  /* Print-equivalent sizes (PDF/print contexts) */
+  --fs-print-h1:  28pt;
+  --fs-print-h2:  20pt;
+  --fs-print-h3:  16pt;
+  --fs-print-body: 11pt;
+  --fs-print-caption: 9pt;
+
+  /* Line Heights */
+  --lh-display:   1.15;
+  --lh-heading:   1.3;
+  --lh-body:      1.6;    /* Generous — per brand guide 1.5–1.7x */
+  --lh-caption:   1.5;
+
+  /* Letter Spacing */
+  --ls-display:   -0.03em;  /* -0.5px at ~16px */
+  --ls-heading:   -0.01em;
+  --ls-body:       0;
+  --ls-caps:       0.08em;  /* For uppercase labels */
+
+  /* ============================================================
+     SPACING TOKENS
+     ============================================================ */
+
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* ============================================================
+     BORDER RADIUS
+     ============================================================ */
+
+  --radius-sm:   2px;   /* Minimal — industrial precision */
+  --radius-md:   4px;   /* Default card/component radius */
+  --radius-lg:   6px;   /* Input, larger components */
+  --radius-pill: 100px; /* Pills/badges only */
+  --radius-none:  0px;  /* Steel, no rounding */
+
+  /* ============================================================
+     SHADOWS & ELEVATION
+     ============================================================ */
+
+  --shadow-sm:  0 1px 3px rgba(26,26,26,0.12), 0 1px 2px rgba(26,26,26,0.08);
+  --shadow-md:  0 4px 12px rgba(26,26,26,0.15), 0 2px 4px rgba(26,26,26,0.10);
+  --shadow-lg:  0 8px 24px rgba(26,26,26,0.18), 0 4px 8px rgba(26,26,26,0.10);
+  --shadow-xl:  0 16px 48px rgba(26,26,26,0.22), 0 8px 16px rgba(26,26,26,0.12);
+
+  /* ============================================================
+     ANIMATION / TRANSITION
+     ============================================================ */
+
+  --ease-default:  cubic-bezier(0.25, 0.1, 0.25, 1.0);  /* Mechanical precision */
+  --ease-out:      cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+
+  --duration-fast:    150ms;
+  --duration-default: 250ms;
+  --duration-slow:    400ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPE STYLES (applied via element selectors)
+   ============================================================ */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-body);
+  color: var(--fg-primary);
+  background-color: var(--bg-secondary);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  color: var(--fg-primary);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+  color: var(--fg-primary);
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-heading);
+  color: var(--fg-primary);
+}
+
+p, .body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-primary);
+}
+
+small, .caption {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+  color: var(--fg-secondary);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--fg-secondary);
+}
+
+/* Logo — always lowercase, brand typeface */
+.logotype {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-display);
+  text-transform: lowercase;
+}
+
+/* Tagline — Messing accent */
+.tagline {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  color: var(--fg-accent);
+  letter-spacing: var(--ls-caps);
+}
+
+/* Dashed "idle" motif line */
+.idle-dashed {
+  border: none;
+  border-top: 2px dashed var(--border-dashed);
+}
+
+/* CTA Button */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-default),
+              transform var(--duration-fast) var(--ease-default);
+  text-decoration: none;
+}
+
+.btn-cta:hover {
+  background: var(--cta-bg-hover);
+}
+
+.btn-cta:active {
+  transform: scale(var(--state-press-scale));
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: transparent;
+  color: var(--fg-inverse);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  border: 1px solid var(--color-betong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-default),
+              color var(--duration-fast) var(--ease-default),
+              transform var(--duration-fast) var(--ease-default);
+  text-decoration: none;
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-messing);
+  color: var(--color-messing);
+}
+
+.btn-ghost:active {
+  transform: scale(var(--state-press-scale));
+}
