@@ -10,30 +10,31 @@ navToggle.addEventListener('click', () => {
 const contactForm = document.getElementById('contact-form');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', (event) => {
+  contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     if (!contactForm.reportValidity()) return;
 
-    const data = new FormData(contactForm);
-    const lines = [
-      `Navn: ${data.get('name')}`,
-      `E-post: ${data.get('email')}`,
-      `Telefon: ${data.get('phone') || '—'}`,
-      `Garasjeadresse: ${data.get('address') || '—'}`,
-      `Ønsket modul: ${data.get('module')}`,
-      '',
-      'Melding:',
-      data.get('message') || '—',
-    ];
+    const submitButton = contactForm.querySelector('.form-submit');
+    submitButton.disabled = true;
 
-    const subject = encodeURIComponent(`Tilbudsforespørsel fra ${data.get('name')}`);
-    const body = encodeURIComponent(lines.join('\n'));
-    const mailtoLink = `mailto:hei@idle.no?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch('send.php', {
+        method: 'POST',
+        body: new FormData(contactForm),
+      });
+      const result = await response.json();
 
-    contactForm.classList.add('is-hidden');
-    document.getElementById('form-success').classList.add('is-visible');
-
-    window.setTimeout(() => { window.location.href = mailtoLink; }, 150);
+      if (result.ok) {
+        contactForm.classList.add('is-hidden');
+        document.getElementById('form-success').classList.add('is-visible');
+      } else {
+        alert(result.error || 'Noe gikk galt. Prøv igjen, eller send oss en e-post direkte.');
+        submitButton.disabled = false;
+      }
+    } catch (err) {
+      alert('Noe gikk galt. Prøv igjen, eller send oss en e-post direkte.');
+      submitButton.disabled = false;
+    }
   });
 }
