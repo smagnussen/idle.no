@@ -19,17 +19,18 @@ if (contactForm) {
     submitButton.disabled = true;
 
     try {
-      const response = await fetch('send.php', {
+      const response = await fetch('https://formsubmit.co/ajax/steinar@idle.no', {
         method: 'POST',
+        headers: { Accept: 'application/json' },
         body: new FormData(contactForm),
       });
       const result = await response.json();
 
-      if (result.ok) {
+      if (response.ok && result.success) {
         contactForm.classList.add('is-hidden');
         document.getElementById('form-success').classList.add('is-visible');
       } else {
-        alert(result.error || 'Noe gikk galt. Prøv igjen, eller send oss en e-post direkte.');
+        alert(result.message || 'Noe gikk galt. Prøv igjen, eller send oss en e-post direkte.');
         submitButton.disabled = false;
       }
     } catch (err) {

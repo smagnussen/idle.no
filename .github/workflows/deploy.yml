@@ -26,9 +26,3 @@ jobs:
             **/.git*
             **/.git*/**
             **/.github/**
-
-      - name: Fix PHP file permissions
-        run: |
-          curl --ftp-ssl --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" \
-            -Q "SITE CHMOD 644 /www/send.php" \
-            "ftp://${{ secrets.FTP_SERVER }}/www/"
